@@ -1,0 +1,46 @@
+<!--Adapted the mouse follower from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmousemove-->
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	canvas
+	{
+	cursor: none;
+	}
+	</style>
+</head>
+<body>
+	<canvas id="GameArea" onmousemove="Coordinates(event)" width="1200" height="600" style="border:1px solid black">
+	</canvas>
+	<p id="Coordinates Display">
+	</p>
+	<script>
+	var GameArea = document.getElementById("GameArea");
+	var PlayerBox = GameArea.getContext("2d");
+	var EnemyBox = GameArea.getContext ("2d")
+	var XCoordinate;
+	var YCoordinate;
+	var Xcomputer;
+	var XFinalComputer;
+	Xcomputer = 600
+		function Coordinates(Mouse)
+		{
+			XCoordinate = Mouse.offsetX;
+			YCoordinate = Mouse.offsetY;
+			var OnScreen = "( " + XCoordinate + " , " + YCoordinate + " )";
+			document.getElementById("Coordinates Display").innerHTML = OnScreen;
+			PlayerBox.clearRect(0, 0, 1200, 600);
+			EnemyBox.clearRect(0, 0, 1200, 600);
+			PlayerBox.fillStyle="blue";
+			PlayerBox.fillRect(XCoordinate,YCoordinate,15,15);
+			
+			XFinalComputer = XCoordinate - Xcomputer
+			EnemyBox.fillStyle="red";
+			EnemyBox.fillRect(XFinalComputer,200,15,15);
+			
+			Xcomputer = Xcomputer - 1
+			
+		}
+	</script>
+</body>
+</html>	
