@@ -1,3 +1,4 @@
+<!--This code was created by Alex King>
 <!--Adapted the mouse follower from https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onmousemove-->
 <!DOCTYPE html>
 <html>
@@ -20,9 +21,9 @@
 	var EnemyBox = GameArea.getContext ("2d")
 	var XCoordinate;
 	var YCoordinate;
-	var Xcomputer;
 	var XFinalComputer;
-	Xcomputer = 600
+	var Speed
+	Speed = 10
 		function Coordinates(Mouse)
 		{
 			XCoordinate = Mouse.offsetX;
@@ -34,11 +35,11 @@
 			PlayerBox.fillStyle="blue";
 			PlayerBox.fillRect(XCoordinate,YCoordinate,15,15);
 			
-			XFinalComputer = XCoordinate - Xcomputer
+			XFinalComputer = XCoordinate + Speed
 			EnemyBox.fillStyle="red";
 			EnemyBox.fillRect(XFinalComputer,200,15,15);
 			
-			Xcomputer = Xcomputer - 1
+
 			
 		}
 	</script>
