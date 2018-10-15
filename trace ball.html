@@ -27,8 +27,9 @@
 	var Lives;
 	var OnScreen;
 	var LivesDisplay;
-	Speed = 10
-	Lives = 3
+	XFinalComputer = 600
+	Speed = 10;
+	Lives = 3;
 		function Coordinates(Mouse)
 		{
 			XCoordinate = Mouse.offsetX;
@@ -39,16 +40,19 @@
 			Box.fillStyle="blue";
 			Box.fillRect(XCoordinate,YCoordinate,15,15);
 			
-			XFinalComputer = XCoordinate + Speed;
 			Box.fillStyle="red";
 			Box.fillRect(XFinalComputer,200,15,15);
 			
 			LivesDisplay = "lives left = " + Lives ;
 			document.getElementById("Lives Display").innerHTML = LivesDisplay;
 			
-			if (XFinalComputer <= XCoordinate && XFinalComputer >= XCoordinate + 20)
-				Lives= Lives - 1
+			if (XFinalComputer < XCoordinate)
 			{
+				XFinalComputer = XFinalComputer + 5
+			}
+			else if (XFinalComputer > XCoordinate)
+			{
+			XFinalComputer = XFinalComputer - 5
 			}
 		}
 	</script>
