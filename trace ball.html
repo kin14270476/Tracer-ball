@@ -15,7 +15,7 @@
 	</canvas>
 	<p id="Coordinates Display">
 	</p>
-	<p id="lives">
+	<p id="Lives Display">
 	<script>
 	var GameArea = document.getElementById("GameArea");
 	var PlayerBox = GameArea.getContext("2d");
@@ -24,8 +24,11 @@
 	var YCoordinate;
 	var XFinalComputer;
 	var Speed;
+	var Lives;
 	var OnScreen;
+	var LivesDisplay;
 	Speed = 10
+	Lives = 3
 		function Coordinates(Mouse)
 		{
 			XCoordinate = Mouse.offsetX;
@@ -41,7 +44,8 @@
 			EnemyBox.fillStyle="red";
 			EnemyBox.fillRect(XFinalComputer,200,15,15);
 			
-			
+			LivesDisplay = "lives left = " lives ;
+			document.getElementById("Lives Display").innerHTML = LivesDisplay;
 		}
 	</script>
 </body>
