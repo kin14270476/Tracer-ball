@@ -16,6 +16,7 @@
 	<p id="Coordinates Display">
 	</p>
 	<p id="Lives Display">
+	</p>
 	<script>
 	var GameArea = document.getElementById("GameArea");
 	var PlayerBox = GameArea.getContext("2d");
@@ -44,7 +45,7 @@
 			EnemyBox.fillStyle="red";
 			EnemyBox.fillRect(XFinalComputer,200,15,15);
 			
-			LivesDisplay = "lives left = " lives ;
+			LivesDisplay = "lives left = " + lives ; 
 			document.getElementById("Lives Display").innerHTML = LivesDisplay;
 		}
 	</script>
