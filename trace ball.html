@@ -19,8 +19,7 @@
 	</p>
 	<script>
 	var GameArea = document.getElementById("GameArea");
-	var PlayerBox = GameArea.getContext("2d");
-	var EnemyBox = GameArea.getContext ("2d")
+	var Box = GameArea.getContext("2d");
 	var XCoordinate;
 	var YCoordinate;
 	var XFinalComputer;
@@ -36,17 +35,21 @@
 			YCoordinate = Mouse.offsetY;
 			OnScreen = "( " + XCoordinate + " , " + YCoordinate + " )";
 			document.getElementById("Coordinates Display").innerHTML = OnScreen;
-			PlayerBox.clearRect(0, 0, 1200, 600);
-			EnemyBox.clearRect(0, 0, 1200, 600);
-			PlayerBox.fillStyle="blue";
-			PlayerBox.fillRect(XCoordinate,YCoordinate,15,15);
+			Box.clearRect(0, 0, 1200, 600);
+			Box.fillStyle="blue";
+			Box.fillRect(XCoordinate,YCoordinate,15,15);
 			
-			XFinalComputer = XCoordinate + Speed
-			EnemyBox.fillStyle="red";
-			EnemyBox.fillRect(XFinalComputer,200,15,15);
+			XFinalComputer = XCoordinate + Speed;
+			Box.fillStyle="red";
+			Box.fillRect(XFinalComputer,200,15,15);
 			
 			LivesDisplay = "lives left = " + Lives ;
 			document.getElementById("Lives Display").innerHTML = LivesDisplay;
+			
+			if (XFinalComputer <= XCoordinate && XFinalComputer >= XCoordinate + 20)
+				Lives= Lives - 1
+			{
+			}
 		}
 	</script>
 </body>
