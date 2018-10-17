@@ -11,7 +11,7 @@
 	</style>
 </head>
 <body>
-	<canvas id="GameArea" onmouseover="Coordinates(event)" width="1200" height="600" style="border:1px solid black">
+	<canvas id="GameArea" onmousemove="Coordinates(event)" width="1200" height="600" style="border:1px solid black">
 	</canvas>
 	<p id="Coordinates Display">
 	</p>
@@ -24,12 +24,14 @@
 	var YCoordinate;
 	var XFinalComputer;
 	var YFinalComputer;
+	var MovingTimer;
 	var Speed;
 	var Lives;
 	var OnScreen;
 	var LivesDisplay;
 	XFinalComputer = 600;
 	YFinalComputer = 300;
+	MovingTimer = setInterval(Following, 10);
 	Speed = 10;
 	Lives = 3;
 		function Coordinates(Mouse)
@@ -48,22 +50,26 @@
 			LivesDisplay = "lives left = " + Lives ;
 			document.getElementById("Lives Display").innerHTML = LivesDisplay;
 			
+
+		}
+		function Following() 
+		{
 			if (XFinalComputer < XCoordinate)
 			{
-				XFinalComputer = XFinalComputer + 5
+				XFinalComputer = XFinalComputer + Speed
 			}
 			else if (XFinalComputer > XCoordinate)
 			{
-			XFinalComputer = XFinalComputer - 5
+				XFinalComputer = XFinalComputer - Speed
 			}
 			
 			if (YFinalComputer < YCoordinate)
 			{
-				YFinalComputer = YFinalComputer + 5
+				YFinalComputer = YFinalComputer + Speed
 			}
 			else if (YFinalComputer > YCoordinate)
 			{
-			YFinalComputer = YFinalComputer - 5
+				YFinalComputer = YFinalComputer - Speed
 			}
 		}
 	</script>
