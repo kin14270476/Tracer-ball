@@ -32,7 +32,7 @@
 	XFinalComputer = 600;
 	YFinalComputer = 300;
 	MovingTimer = setInterval(Following, 10);
-	Speed = 10;
+	Speed = 1;
 	Lives = 3;
 		function Coordinates(Mouse)
 		{
@@ -40,12 +40,6 @@
 			YCoordinate = Mouse.offsetY;
 			OnScreen = "( " + XCoordinate + " , " + YCoordinate + " )";
 			document.getElementById("Coordinates Display").innerHTML = OnScreen;
-			Box.clearRect(0, 0, 1200, 600);
-			Box.fillStyle="blue";
-			Box.fillRect(XCoordinate,YCoordinate,15,15);
-			
-			Box.fillStyle="red";
-			Box.fillRect(XFinalComputer,YFinalComputer,15,15);
 			
 			LivesDisplay = "lives left = " + Lives ;
 			document.getElementById("Lives Display").innerHTML = LivesDisplay;
@@ -71,6 +65,11 @@
 			{
 				YFinalComputer = YFinalComputer - Speed
 			}
+			Box.clearRect(0, 0, 1200, 600);
+			Box.fillStyle="blue";
+			Box.fillRect(XCoordinate,YCoordinate,15,15);
+			Box.fillStyle="red";
+			Box.fillRect(XFinalComputer,YFinalComputer,15,15);
 		}
 	</script>
 </body>
